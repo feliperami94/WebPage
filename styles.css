@@ -1,11 +1,148 @@
 /* ============================================
    TUTO MUSIC — Premium Visual Identity
-   Two-Font System: Clash Display + Neue Montreal
+   Two-Font System: Vanguard CF + Neue Montreal
    ============================================ */
+
+/* ── Custom Fonts ── */
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-Thin.woff2') format('woff2'),
+         url('fonts/VanguardCF-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-ThinOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-ThinOblique.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-Light.woff2') format('woff2'),
+         url('fonts/VanguardCF-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-LightOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-LightOblique.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-Regular.woff2') format('woff2'),
+         url('fonts/VanguardCF-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-RegularOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-RegularOblique.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-Medium.woff2') format('woff2'),
+         url('fonts/VanguardCF-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-MediumOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-MediumOblique.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-DemiBold.woff2') format('woff2'),
+         url('fonts/VanguardCF-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-DemiBoldOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-DemiBoldOblique.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-Bold.woff2') format('woff2'),
+         url('fonts/VanguardCF-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-BoldOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-BoldOblique.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-ExtraBold.woff2') format('woff2'),
+         url('fonts/VanguardCF-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-ExtraBoldOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-ExtraBoldOblique.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-Heavy.woff2') format('woff2'),
+         url('fonts/VanguardCF-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vanguard CF';
+    src: url('fonts/VanguardCF-HeavyOblique.woff2') format('woff2'),
+         url('fonts/VanguardCF-HeavyOblique.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
 
 :root {
     /* ── Typography ── */
-    --font-display: 'Clash Display', 'Georgia', serif;
+    --font-display: 'Vanguard CF', 'Georgia', serif;
     --font-body: 'Neue Montreal', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* ── Color System ── */
@@ -74,9 +211,10 @@ body {
 h1, h2, h3, h4 {
     font-family: var(--font-display);
     color: var(--text-white);
-    font-weight: 600;
+    font-weight: 500;
+    font-style: italic;
     line-height: 1.15;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
 }
 
 a {
@@ -105,22 +243,26 @@ a {
     align-items: center;
     max-width: 1140px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 10px 2rem;
 }
 
 .logo {
     font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-style: italic;
     color: var(--text-white);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    line-height: 1;
+    transform: translateY(-4px); /* Pushed up inside the container as requested */
 }
 
 .nav-links {
     display: flex;
     align-items: center;
     gap: 2.2rem;
+    transform: translateY(-2px);
 }
 
 .nav-links a {
@@ -162,6 +304,7 @@ a {
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    transform: translateY(-2px);
 }
 
 .lang-toggle .active-lang {
@@ -268,12 +411,15 @@ input:checked + .slider:before {
 
 .hero-content h1 {
     font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.02em;
     line-height: 1.05;
     margin-bottom: 1.5rem;
     color: var(--text-white);
 }
+
+
 
 .hero-content p {
     font-size: 1.1rem;
@@ -697,9 +843,10 @@ footer {
 
 .footer-brand {
     font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    font-size: 3.2rem;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-white);
 }

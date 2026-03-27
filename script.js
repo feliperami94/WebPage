@@ -170,12 +170,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Contact Form ──
     const form = document.getElementById('contact-form');
+    const langSwitchContact = document.getElementById('lang-switch'); // Use existing correctly
+    
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const isEs = langSwitch && langSwitch.checked;
-            alert(isEs ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!');
-            e.target.reset();
+            
+            // Get form data
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            
+            // Change submit button text while sending
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let result = await response.json();
+                if (response.status == 200) {
+                    const isEs = langSwitchContact && langSwitchContact.checked;
+                    alert(isEs ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!');
+                    form.reset();
+                } else {
+                    console.log(response);
+                    alert("Error: " + result.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Something went wrong!");
+            })
+            .finally(() => {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
         });
     }
 });
